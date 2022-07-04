@@ -27,7 +27,7 @@ body{
 
 .grid{
     display: grid;
-    background-color: lightblue;
+    background-color: grey;
     height: 60%;
     width: min(500px, 70%);
     margin: auto;

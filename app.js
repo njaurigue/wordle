@@ -27,14 +27,16 @@ document.addEventListener("keydown", e => {
     }else{
         if(e.key == "Enter"){
             if(compareWords(solution, curr, row)){
-                gameWin();
+                alert("You Win!");
+                newGame();
             }else if(row == 6){
                 alert("You Lose, the word was: " + solution);
                 newGame();
+            }else{
+                row++;
+                char = 0;
+                curr = [];
             }
-            row++;
-            char = 0;
-            curr = [];
         }
     }
 });
@@ -64,7 +66,7 @@ function compareWords(solution, curr, row){
 }
 
 function gameWin(){
-    console.log("You Win!");
+    alert("You Win!");
     return;
 }
 
