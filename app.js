@@ -32,7 +32,8 @@ document.addEventListener("keydown", e => {
         }
     }else{
         if(e.key == "Enter"){
-            if(compareWords(solution, curr, row)){
+            let result = compareWords(solution, curr, row);
+            if(result){
                 won = true;
                 alert("You Win! The word was: " + solution);
             }else if(row == 6){
@@ -47,13 +48,13 @@ document.addEventListener("keydown", e => {
 });
 
 function compareWords(solution, curr, row){
-    let solutionArray = solution.split("");
     let matches = 0;
     for(let i = 0; i < 5; i++){
-        let seen = used.includes(curr[i]); //check for if letter has been used
+        let seen = used.includes(curr[i]); //check if letter has been used
 
         if(curr[i] == solution[i]){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(83,141,78)";
+            document.getElementById(row + "," + i).style.outlineColor = "rgb(83,141,78)"
             matches++;
             if(!seen){
                 used.push(curr[i]);
@@ -61,12 +62,14 @@ function compareWords(solution, curr, row){
             }
         }else if(solution.includes(curr[i])){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(181,159,59)";
+            document.getElementById(row + "," + i).style.outlineColor = "rgb(181,159,59)"
             if(!seen){
                 used.push(curr[i]);
                 document.getElementById(curr[i]).style.backgroundColor = "rgb(181,159,59)";
             }
         }else{
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(52, 52, 52)";
+            document.getElementById(row + "," + i).style.outlineColor = "rgb(52, 52, 52)"
             if(!seen){
                 used.push(curr[i]);
                 document.getElementById(curr[i]).style.backgroundColor = "rgb(52, 52, 52)";
@@ -87,9 +90,14 @@ function newGame(){
         for(let j = 0; j < 5; j++){
             document.getElementById(i + "," + j).innerHTML = "";
             document.getElementById(i + "," + j).style.backgroundColor = "unset";
+            document.getElementById(i + "," + j).style.outlineColor = "rgb(52,52,52)";
         }
     }
-    row = 1;
+    let keys = document.getElementsByClassName("key");
+    for (let index = 0; index < keys.length; index++) {
+        keys[i].style.backgroundColor = "rgb(129,131,132)";
+    }
+
     char = 0;
     curr = [];
     solution = getSolution();
