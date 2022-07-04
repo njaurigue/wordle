@@ -58,7 +58,7 @@ body{
 .keyboard{
     display: grid;
     height: 25%;
-    width: min(600px, 70%);
+    width: min(600px, 100%);
     margin: auto;
     grid-template-rows: 1fr 1fr 1fr;
 }
