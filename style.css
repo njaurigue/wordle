@@ -50,6 +50,54 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 4px;
     outline: 3px solid rgb(52, 52, 52);
 }
+
+.keyboard{
+    display: grid;
+    height: 25%;
+    width: min(550px, 70%);
+    margin: auto;
+}
+
+.row{
+    margin: 4px 0;
+}
+
+.row button{
+    border-radius: 6px;
+    height: 100%;
+    width: 45px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(129,131,132);
+    border: none;
+}
+
+#Enter{
+    width: 70px;
+}
+
+#Backspace{
+    width: 90px
+}
+
+/*
+topRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+middleRow{
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+bottomRow{
+    display: grid;
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+*/

@@ -2,6 +2,7 @@ let words = ["aback","abase","abate","abbey","abbot","abhor","abide","abled","ab
 let row = 1;
 let char = 0;
 let curr = []; //char array
+let used = []; //used char array
 let solution = getSolution();
 let won = false;
 
@@ -36,7 +37,6 @@ document.addEventListener("keydown", e => {
                 alert("You Win! The word was: " + solution);
             }else if(row == 6){
                 alert("You Lose, the word was: " + solution);
-                newGame();
             }else{
                 row++;
                 char = 0;
@@ -48,22 +48,33 @@ document.addEventListener("keydown", e => {
 
 function compareWords(solution, curr, row){
     let solutionArray = solution.split("");
-    for(let i = 0; i < 5; i++){
-        console.log(solutionArray[i]);
-    }
-    for(let i = 0; i < 5; i++){
-        console.log(curr[i]);
-    }
-
     let matches = 0;
     for(let i = 0; i < 5; i++){
+        let seen = used.includes(curr[i]); //check for if letter has been used
+
         if(curr[i] == solution[i]){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(83,141,78)";
             matches++;
+            if(!seen){
+                used.push(curr[i]);
+                document.getElementById(curr[i]).style.backgroundColor = "rgb(83,141,78)";
+            }
         }else if(solution.includes(curr[i])){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(181,159,59)";
+            if(!seen){
+                used.push(curr[i]);
+                document.getElementById(curr[i]).style.backgroundColor = "rgb(181,159,59)";
+            }
+        }else{
+            document.getElementById(row + "," + i).style.backgroundColor = "rgb(52, 52, 52)";
+            if(!seen){
+                used.push(curr[i]);
+                document.getElementById(curr[i]).style.backgroundColor = "rgb(52, 52, 52)";
+            }
         }
     }
+
+    //check for complete word match
     if(matches == 5){
         return true;
     }
