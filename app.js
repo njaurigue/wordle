@@ -7,7 +7,7 @@ let solution = getSolution();
 function getSolution(){
     let index = Math.floor(Math.random() * 2315);
     let toReturn = words[index];
-    document.getElementById("gameNumber").innerHTML = "Puzzle: " + index + "/2315"; 
+    /*document.getElementById("gameNumber").innerHTML = "Puzzle: " + index + "/2315";*/
     console.log("SOLUTION: " + toReturn);
     return toReturn;
 }
@@ -85,5 +85,3 @@ function newGame(){
     curr = [];
     solution = getSolution();
 }
-
-
