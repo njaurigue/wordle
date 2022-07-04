@@ -78,7 +78,7 @@ body{
 
 .row button{
     border-radius: 6px;
-    height: 10vh;
+    height:auto;
     width: 9%;
     font-size: 16px;
     color: white;
