@@ -5,7 +5,9 @@ let curr = []; //char array
 let solution = getSolution();
 
 function getSolution(){
-    let toReturn = words[Math.floor(Math.random() * 2315)];
+    let index = Math.floor(Math.random() * 2315);
+    let toReturn = words[index];
+    document.getElementById("gameNumber").innerHTML = "Puzzle: " + index + "/2315"; 
     console.log("SOLUTION: " + toReturn);
     return toReturn;
 }
