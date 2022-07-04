@@ -7,6 +7,7 @@ fs.readFile("words.csv", "utf-8", (err, data) =>{
         console.error(err);
         return;
     }
+    console.log(data);
     words = data.split(" ");
 })
 console.log(words[0]);
