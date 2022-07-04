@@ -39,7 +39,7 @@ function readInput(key){
             if(result){
                 won = true;
                 alert("You Win! The word was: " + solution);
-            }else if(row == 6){
+            }else if(!result && row == 6){
                 alert("You Lose, the word was: " + solution);
             }else{
                 row++;

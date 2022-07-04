@@ -57,7 +57,6 @@ body{
 }
 
 .keyboard{
-    background-color: red;
     display: grid;
     height: 25%;
     width: min(600px, 100%);
