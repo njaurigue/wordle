@@ -70,7 +70,7 @@ body{
 .row button{
     border-radius: 6px;
     height: 100%;
-    width: 45px;
+    width: 9%;
     font-size: 16px;
     color: white;
     background-color: rgb(129,131,132);
@@ -78,11 +78,11 @@ body{
 }
 
 #Enter{
-    width: 70px;
+    width: 11%;
 }
 
 #Backspace{
-    width: 90px
+    width: 15%;
 }
 
 /*
