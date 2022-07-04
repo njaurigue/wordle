@@ -7,17 +7,29 @@ body{
     font-family: "Helvetica Neue", "IBM Plex Sans", "sans-serif";
 }
 
-#title{
-    color: white;
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     height: 10%;
-    background-color: darkgreen;
+    background-color: rgb(83,141,78);
+}
+
+#title, #name{
+    display: inline;
+    color: white;
+    margin: 0;
+}
+
+.break{
+    flex-basis: 100%;
     margin: 0;
 }
 
 #gameNumber{
     color:white;
     height: 5%;
-    background-color: blue;
     margin: 0;
 }
 
@@ -27,13 +39,17 @@ body{
 
 .grid{
     display: grid;
-    background-color: grey;
-    height: 60%;
-    width: min(500px, 70%);
+    height: 55%;
+    width: min(400px, 70%);
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .grid p{
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    outline: 3px solid rgb(52, 52, 52);
 }

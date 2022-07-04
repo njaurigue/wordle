@@ -3,6 +3,7 @@ let row = 1;
 let char = 0;
 let curr = []; //char array
 let solution = getSolution();
+let won = false;
 
 function getSolution(){
     let index = Math.floor(Math.random() * 2315);
@@ -16,21 +17,23 @@ document.addEventListener("keydown", e => {
     console.log(e);
     
     if(e.key == "Backspace"){
-        if(!char == 0){
+        if(won){
+            console.log();
+        }else if(!char == 0){
             curr.pop();
-            document.getElementById(row + "," + (--char)).innerHTML = 0;
+            document.getElementById(row + "," + (--char)).innerHTML = "";
         }
     }
     if(char != 5){
         if(e.key.length == 1){
             curr.push(e.key);
-            document.getElementById(row + "," + (char++)).innerHTML = e.key;
+            document.getElementById(row + "," + (char++)).innerHTML = e.key.toUpperCase();
         }
     }else{
         if(e.key == "Enter"){
             if(compareWords(solution, curr, row)){
-                alert("You Win!");
-                newGame();
+                won = true;
+                alert("You Win! The word was: " + solution);
             }else if(row == 6){
                 alert("You Lose, the word was: " + solution);
                 newGame();
@@ -55,10 +58,10 @@ function compareWords(solution, curr, row){
     let matches = 0;
     for(let i = 0; i < 5; i++){
         if(curr[i] == solution[i]){
-            document.getElementById(row + "," + i).style.backgroundColor = "green";
+            document.getElementById(row + "," + i).style.backgroundColor = "rgb(83,141,78)";
             matches++;
         }else if(solution.includes(curr[i])){
-            document.getElementById(row + "," + i).style.backgroundColor = "yellow";
+            document.getElementById(row + "," + i).style.backgroundColor = "rgb(181,159,59)";
         }
     }
     if(matches == 5){
@@ -67,16 +70,11 @@ function compareWords(solution, curr, row){
     return false;
 }
 
-function gameWin(){
-    alert("You Win!");
-    return;
-}
-
 function newGame(){
     console.log("New Game");
     for(let i = 1; i < 7; i++){
         for(let j = 0; j < 5; j++){
-            document.getElementById(i + "," + j).innerHTML = "0";
+            document.getElementById(i + "," + j).innerHTML = "";
             document.getElementById(i + "," + j).style.backgroundColor = "unset";
         }
     }
@@ -84,4 +82,5 @@ function newGame(){
     char = 0;
     curr = [];
     solution = getSolution();
+    won = false;
 }
