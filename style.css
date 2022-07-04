@@ -8,16 +8,16 @@ body{
 }
 
 .header{
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     height: 10%;
     background-color: rgb(83,141,78);
+    grid-template-rows: 2fr 1fr;
 }
 
 #title, #name{
-    display: inline;
     color: white;
     margin: 0;
 }
@@ -40,9 +40,10 @@ body{
 .grid{
     display: grid;
     height: 55%;
-    width: min(400px, 70%);
+    width: min(500px, 70%);
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .grid p{
@@ -50,15 +51,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 4px;
+    margin: 5px;
     outline: 3px solid rgb(52, 52, 52);
 }
 
 .keyboard{
     display: grid;
     height: 25%;
-    width: min(550px, 70%);
+    width: min(600px, 70%);
     margin: auto;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .row{

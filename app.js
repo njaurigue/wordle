@@ -3,21 +3,24 @@ let row = 1;
 let char = 0;
 let curr = []; //char array
 let used = []; //used char array
-let solution = getSolution();
+let solution = "";
 let won = false;
+
+window.onload = function() {
+    solution = getSolution();
+};
+
 
 function getSolution(){
     let index = Math.floor(Math.random() * 2315);
     let toReturn = words[index];
-    /*document.getElementById("gameNumber").innerHTML = "Puzzle: " + index + "/2315";*/
+    document.getElementById("gameNumber").innerHTML = "Puzzle: " + index + "/2315";
     console.log("SOLUTION: " + toReturn);
     return toReturn;
 }
 
-document.addEventListener("keydown", e => {
-    console.log(e);
-    
-    if(e.key == "Backspace"){
+function readInput(key){
+    if(key == "Backspace"){
         if(won){
             console.log();
         }else if(!char == 0){
@@ -26,12 +29,12 @@ document.addEventListener("keydown", e => {
         }
     }
     if(char != 5){
-        if(e.key.length == 1){
-            curr.push(e.key);
-            document.getElementById(row + "," + (char++)).innerHTML = e.key.toUpperCase();
+        if(key.length == 1){
+            curr.push(key);
+            document.getElementById(row + "," + (char++)).innerHTML = key.toUpperCase();
         }
     }else{
-        if(e.key == "Enter"){
+        if(key == "Enter"){
             let result = compareWords(solution, curr, row);
             if(result){
                 won = true;
@@ -45,7 +48,7 @@ document.addEventListener("keydown", e => {
             }
         }
     }
-});
+}
 
 function compareWords(solution, curr, row){
     let matches = 0;
@@ -93,9 +96,8 @@ function newGame(){
             document.getElementById(i + "," + j).style.outlineColor = "rgb(52,52,52)";
         }
     }
-    let keys = document.getElementsByClassName("key");
-    for (let index = 0; index < keys.length; index++) {
-        keys[i].style.backgroundColor = "rgb(129,131,132)";
+    for (let i = 0; i < used.length; i++) {
+        document.getElementById(used[i]).style.backgroundColor = "rgb(129,131,132)";
     }
 
     char = 0;
@@ -103,3 +105,14 @@ function newGame(){
     solution = getSolution();
     won = false;
 }
+
+//INPUT TYPES
+
+//keyboard input
+document.addEventListener("keydown", e => {
+    console.log(e);
+    
+    readInput(e.key);
+});
+
+//on-screen kayboard input integrated through HTML
