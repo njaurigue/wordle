@@ -28,6 +28,8 @@ document.addEventListener("keydown", e => {
         if(e.key == "Enter"){
             if(compareWords(solution, curr, row)){
                 gameWin();
+            }else if(row == 6){
+                console.warn("You Lose, the word was: " + solution);
             }
             row++;
             char = 0;
