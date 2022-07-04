@@ -30,6 +30,7 @@ document.addEventListener("keydown", e => {
                 gameWin();
             }else if(row == 6){
                 alert("You Lose, the word was: " + solution);
+                newGame();
             }
             row++;
             char = 0;
