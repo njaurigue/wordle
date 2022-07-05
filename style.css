@@ -93,7 +93,7 @@ body{
     color: white;
     background-color: rgb(129,131,132);
     border: none;
-    margin: 0 4px;
+    margin: 0 0.5vw;
 }
 
 .row button:focus{
