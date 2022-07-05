@@ -58,11 +58,8 @@ function compareWords(solution, curr, row){
         if(curr[i] == solution[i]){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(83,141,78)";
             document.getElementById(row + "," + i).style.outlineColor = "rgb(83,141,78)"
-            matches++;
-            if(!seen){
-                used.push(curr[i]);
-                document.getElementById(curr[i]).style.backgroundColor = "rgb(83,141,78)";
-            }
+            matches++; 
+            document.getElementById(curr[i]).style.backgroundColor = "rgb(83,141,78)";
         }else if(solution.includes(curr[i])){
             document.getElementById(row + "," + i).style.backgroundColor = "rgb(181,159,59)";
             document.getElementById(row + "," + i).style.outlineColor = "rgb(181,159,59)"
