@@ -48,8 +48,8 @@ body{
 
 .grid{
     display: grid;
-    height: 54vh;
-    width: 45vh;
+    height: 48vh;
+    width: 40vh;
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
