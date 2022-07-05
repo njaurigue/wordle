@@ -71,7 +71,7 @@ body{
 .keyboard{
     display: grid;
     height: 25vh;
-    width: min(600px, 100%);
+    width: min(600px, 100vw);
     margin: auto;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -80,6 +80,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     margin: 4px 0;
 }
 
