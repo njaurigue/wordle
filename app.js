@@ -99,7 +99,8 @@ function newGame(){
     for (let i = 0; i < used.length; i++) {
         document.getElementById(used[i]).style.backgroundColor = "rgb(129,131,132)";
     }
-
+    
+    row = 1;
     char = 0;
     curr = [];
     solution = getSolution();
