@@ -46,6 +46,10 @@ body{
     display: inline;
 }
 
+.board{
+    width: 100%;
+}
+
 .grid{
     display: grid;
     height: 48vh;
@@ -66,24 +70,28 @@ body{
 
 .keyboard{
     display: grid;
-    height: 31vh;
+    height: 25vh;
     width: min(600px, 100%);
     margin: auto;
     grid-template-rows: 1fr 1fr 1fr;
 }
 
 .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 4px 0;
 }
 
 .row button{
     border-radius: 6px;
-    height:auto;
+    height: 100%;
     width: 9%;
     font-size: 16px;
     color: white;
     background-color: rgb(129,131,132);
     border: none;
+    margin: 0 4px;
 }
 
 .row button:focus{
