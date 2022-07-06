@@ -74,14 +74,14 @@ body{
     width: min(600px, 100vw);
     margin: auto;
     grid-template-rows: 1fr 1fr 1fr;
-    background-color: red;
+    /*background-color: red;*/
 }
 
 .row{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     margin: 4px 0;
 }
 
