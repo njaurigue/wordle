@@ -1,17 +1,72 @@
 html{
-    max-width: 100%;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
 body{
-    font-family: "Helvetica Neue", "IBM Plex Sans", "sans-serif";
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
     margin: 0;
     background-color: #0E0E10;
-    text-align: center;
-    -webkit-appearance: none;
+
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(0.5rem, 2.5vmin, 1rem);
 }
 
+h1{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.grid{  
+    border: 1px solid blue;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+    grid-template-columns: repeat(5, 3em);
+    grid-template-rows: repeat(6, 3em);
+    gap: .7rem;
+}
+
+.square{
+    outline: 2px solid #3a3a3c;
+    height: 3em;
+}
+
+.keyboard{
+    border: 1px solid red;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(20, minmax(auto, 1.25em));
+    grid-auto-rows: 3.5em;
+    grid-gap: .2em;
+    margin: 1em 0;
+}
+
+.key{
+    background-color: rgb(129,131,132);
+    color: white;
+    font-size: inherit;
+    grid-column: span 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem
+}
+
+.long{
+    grid-column: span 3;
+}
+
+
+h1, p{
+    color: white;
+}
+
+/*
 .header{
     display: grid;
     flex-wrap: wrap;
@@ -74,14 +129,12 @@ body{
     width: min(600px, 100vw);
     margin: auto;
     grid-template-rows: 1fr 1fr 1fr;
-    /*background-color: red;*/
 }
 
 .row{
     display: flex;
     align-items: center;
     justify-content: center;
-    /*border: 2px solid blue;*/
     margin: 4px 0;
 }
 
@@ -108,7 +161,6 @@ body{
     width: 15%;
 }
 
-/*
 topRow{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
