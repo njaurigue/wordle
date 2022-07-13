@@ -17,18 +17,16 @@
         flex-direction: column;
         font-size: clamp(0.5rem, 3vmin, 1rem);
         text-align: center;
+        color: white;
     }
     
     h1{
-        color: blue;
-        text-align: center;
         margin: 0.2em 0;
     }
     
     hr{
         background-color: #3a3a3c;
         height: 1px;
-        width: 100%;
         margin: 0;
         border: 0;
     }
@@ -41,18 +39,12 @@
         align-content: center;
     }
     
-    #gameNumber{
-        margin: 0;
-        padding: 0;
-    }
-    
-    #newGame{
-        margin: 0 1em;
+    #gameNumber, #newGame{
+        margin: 0 0.5em;
         padding: 0;
     }
     
     .grid{
-        border: 1px solid blue;
         margin: 0;
         display: grid;
         justify-content: center;
@@ -77,8 +69,8 @@
     .keyboard{
         display: grid;
         justify-content: center;
-        grid-template-columns: repeat(20, minmax(auto, 1.25em));
-        grid-auto-rows: 3.5em;
+        grid-template-columns: repeat(20, minmax(auto, 1.5em));
+        grid-auto-rows: 4em;
         grid-gap: .2em;
         margin: 1em 0;
     }
@@ -93,17 +85,13 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        border-radius: 0.5rem;
+        border-radius: 0.3rem;
         border: none;
         touch-action: manipulation;
     }
     
     .long{
         grid-column: span 3;
-    }
-    
-    p{
-        color: white;
     }
 }
 
