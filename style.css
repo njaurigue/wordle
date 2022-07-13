@@ -1,12 +1,16 @@
 @media only screen and (max-device-width: 480px){
+
+    html, body{
+        height: 90vh;
+    }
+
     html{
         font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
     }
     
     body{
-        overflow-y: hidden;
-        height: 100vh;
         margin: 0;
+        padding: 0;
         background-color: #0E0E10;
     
         display: flex;
@@ -48,6 +52,7 @@
     }
     
     .grid{
+        border: 1px solid blue;
         margin: 0;
         display: grid;
         justify-content: center;
