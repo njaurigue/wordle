@@ -4,6 +4,7 @@
     }
     
     body{
+        overflow-y: hidden;
         height: 100vh;
         margin: 0;
         background-color: #0E0E10;
@@ -15,7 +16,7 @@
     }
     
     h1{
-        color: yellow;
+        color: blue;
         text-align: center;
         margin: 0.2em 0;
     }
