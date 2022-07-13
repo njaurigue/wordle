@@ -50,15 +50,15 @@
         justify-content: center;
         align-content: center;
         flex-grow: 1;
-        grid-template-columns: repeat(5, 4rem);
-        grid-template-rows: repeat(6, 4rem);
+        grid-template-columns: repeat(5, 14vw);
+        grid-template-rows: repeat(6, 14vw);
         gap: 0.6em;
         font-size: clamp(0.5rem, 5vmin, 1rem);
     }
     
     .square{
         outline: 2px solid #3a3a3c;
-        height: 4rem;
+        height: 14vw;
         margin: 0;
     
         display: flex;
@@ -135,13 +135,8 @@
         align-content: center;
     }
     
-    #gameNumber{
-        margin: 0;
-        padding: 0;
-    }
-    
-    #newGame{
-        margin: 0 1em;
+    #gameNumber, #newGame{
+        margin: 0 0.5em;
         padding: 0;
     }
     
