@@ -5,6 +5,7 @@ let curr = []; //current char array
 let used = []; //used char array
 let solution = ""; //puzzle solution
 let done = false; //game state (done = true, in progress = false)
+let fresh = true; //check fresh game started
 
 window.onload = function() {
     solution = getSolution();
@@ -33,7 +34,9 @@ function getSolution(){
  * Updates grid, calls compareWords() to update keyboard
  */
 function readInput(key){
-    console.log("readInput on: " + key);
+    if(done){
+        return;
+    }
     if(key == "Backspace"){
         if(!done && char != 0){
             curr.pop();
@@ -53,7 +56,8 @@ function readInput(key){
                     alert("You Win! The word was: " + solution);
                 }else if(!result && row == 6){
                     alert("Sorry, the word was: " + solution);
-                }else{
+                }else if(char != 0){
+                    fresh = false;
                     row++;
                     char = 0;
                     curr = [];
@@ -138,7 +142,7 @@ function newGame(){
     for (let i = 0; i < used.length; i++) {
         document.getElementById(used[i]).style.backgroundColor = "rgb(129,131,132)";
     }
-    
+    fresh = true;
     row = 1;
     char = 0;
     curr = [];
