@@ -5,7 +5,6 @@ let curr = []; //current char array
 let used = []; //used char array
 let solution = ""; //puzzle solution
 let done = false; //game state (done = true, in progress = false)
-let fresh = true; //check fresh game started
 
 window.onload = function() {
     solution = getSolution();
@@ -57,7 +56,6 @@ function readInput(key){
                 }else if(!result && row == 6){
                     alert("Sorry, the word was: " + solution);
                 }else if(char != 0){
-                    fresh = false;
                     row++;
                     char = 0;
                     curr = [];
@@ -142,7 +140,6 @@ function newGame(){
     for (let i = 0; i < used.length; i++) {
         document.getElementById(used[i]).style.backgroundColor = "rgb(129,131,132)";
     }
-    fresh = true;
     row = 1;
     char = 0;
     curr = [];
